@@ -1,0 +1,24 @@
+# 🌌 Animated Night Sky Generator
+**Participants:** Jaden Kearney, Jenisha Paudel, Bryan Nchoutpouen
+
+## 📂 Project Structure: What does each file do?
+
+To keep our code "clean," we have divided the project into three specific parts. Think of it like building a house: one file is the frame, one is the paint, and one is the electricity that makes things move.
+
+---
+
+### 1. index.html (The Skeleton)
+This is the "entry point" of our project. 
+* **What it does:** It tells the web browser which tools we need to load.
+* **In Simple Terms:** It’s like a container. It grabs the **P5.js library** from the internet and then connects our logic (`sketch.js`) and our look (`style.css`) together so they work as one single app.
+
+### 2. style.css (The Appearance)
+This file handles the visual "vibe" outside of the actual drawing.
+* **What it does:** It tells the browser to get rid of margins and hide scrollbars.
+* **In Simple Terms:** It makes sure our night sky covers the **entire screen** perfectly, without any white edges or distracting scrollbars. It sets the stage for a "Full Screen" immersive experience.
+
+### 3. sketch.js (The Brains & Animation)
+This is where the magic happens! All our math and art logic live here.
+* **What it does:** * **Setup():** Runs once to create the canvas. 
+    * **Draw():** This is a loop that runs 60 times per second. It handles the "twinkling" stars and the "shooting stars."
+* **In Simple Terms:** This file is the artist. It calculates where every star should go, how bright it should blink, and draws the moon. If the sky is moving or changing, `sketch.js` is the one doing the work.
