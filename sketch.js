@@ -45,6 +45,14 @@ function draw() {
   sphere(60); 
   pop();
 }
+window.onload = () => {
+  const button = document.getElementById("musicBtn");
+  const music = document.getElementById("bgMusic");
+
+  button.addEventListener("click", () => {
+    music.play();
+  })
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
