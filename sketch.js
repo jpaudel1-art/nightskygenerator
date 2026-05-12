@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight, WEBGL);
 }
 
 function draw() {
@@ -7,10 +7,18 @@ function draw() {
   background(5, 10, 30); 
   
   // Draw a simple moon to test
-  fill(255, 255, 240);
+  push();
+  translate(-300, -150, 0);
+
   noStroke();
-  ellipse(200, 150, 80, 80);
-  
+  ambientLight(150);
+  pointLight(255, 255, 255, 0, 0, 300);
+
+  fill(240, 240, 220);
+  sphere(60);
+
+  pop();
+
   // Instructions text
   fill(255);
   text("Night Sky Generator is Running!", 20, 30);
