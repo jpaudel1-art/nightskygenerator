@@ -7,12 +7,13 @@ function setup(){
   createCanvas(windowWidth, windowHeight, WEBGL);
 
 
-for(let i = 0; i < 500; i++){
+for(let i = 0; i < 400; i++){
   stars.push({
-    x: random(-width, width),
-    y: random(-height, height),
-    z: random(-1000, 1000),
-    size: random(1, 4)
+    x: random(width),
+    y: random(height),
+    size: random(1, 4),
+    size: random(0.2, 1.5),
+    brightness: random(150, 255)
   });
 }
 }
@@ -21,34 +22,25 @@ function draw() {
   // Midnight Blue Background
   background(5, 10, 30); 
 
-  rotateY(frameCount * 0.0008);
-  rotateX(frameCount * 0.0003);
-
   //Stars in 3D space
-  for(let stars of stars) {
-    push();
-    translate(star.x, star.y, star.z);
+  for(let star of stars) {
     noStroke();
-    fill(255, random(150, 255));
-    sphere(star.size);
+    fill(255, star.brightness);
+    circle(star.x, star.y, star.size);
     pop();
 
-    star.z += 2;
+    star.y += star.speed;
 
-    if(star.z > 1000){
-      star.z = -1000;
-      star.x = random(-width, width);
-      star.y = random(-height, height);
+    if(star.z > height){
+     star.y = 0;
+     star.x = random(width);
     }
   }
   
   // Draw a simple moon to test
-  push();
-  translate(250, -180, -300);
-  noStroke();
+
   fill(230, 230,200);
-  sphere(60);
-  pop();
+  circle(width - 150, 120, 80);
 
   // Instructions text
   fill(255);
