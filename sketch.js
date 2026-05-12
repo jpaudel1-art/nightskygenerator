@@ -1,5 +1,12 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  alert("sketch.js is running");
+  createCanvas(windowWidth, windowHeight);
+  background(0);
+}
+
+function draw() {
+  fill(255);
+  circle(width / 2, height / 2, 100);
 }
 let stars = [];
 
